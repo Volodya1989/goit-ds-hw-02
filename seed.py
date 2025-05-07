@@ -33,9 +33,7 @@ def seed_tasks(n=30):
 
     for _ in range(n):
         title = fake.sentence(nb_words=6)
-        description = (
-            fake.text() if random.random() > 0.2 else None
-        )  # 20% chance of None description
+        description = fake.text() if random.random() > 0.2 else None
         status_id = random.choice(status_ids)
         user_id = random.choice(user_ids)
         cursor.execute(
