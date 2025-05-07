@@ -1,85 +1,84 @@
-# GOIT Data Science HW 2 — Task Management System with SQLite
 
-## 📚 Опис
+# 📘 GOIT Data Science HW 2 — Task Management System with SQLite
 
-Цей проєкт реалізує систему управління завданнями з використанням бази даних SQLite. База даних містить три основні
-таблиці: `users`, `status`, та `tasks`. Структура забезпечує правильну організацію даних, унікальність користувачів та
-статусів, а також каскадне видалення пов’язаних завдань при видаленні користувача.
+## 📚 Description
 
-## 📂 Структура проєкту
+This project implements a task management system using an SQLite database. The database consists of three main tables: `users`, `status`, and `tasks`. The schema ensures proper data organization, uniqueness of users and statuses, and cascading deletion of tasks when a user is removed.
 
-- `create_db.sql` — SQL-скрипт для створення таблиць бази даних.
-- `seed.py` — Python-скрипт для генерації тестових даних за допомогою бібліотеки `Faker`.
-- `queries.sql` — SQL-запити відповідно до завдання (вибірка, оновлення, видалення, агрегація).
-- `requirements.txt` — перелік залежностей Python.
-- `README.md` — цей файл.
+## 📂 Project Structure
 
-## 🛠️ Технології
+- `create_db.sql` — SQL script to create the database tables.
+- `seed.py` — Python script for populating the database with test data using the `Faker` library.
+- `queries.sql` — SQL queries required for the assignment (select, update, delete, aggregation).
+- `requirements.txt` — List of Python dependencies.
+- `README.md` — This file.
+
+## 🛠️ Technologies Used
 
 - Python 3.10+
 - SQLite3
 - Faker
 - SQL
 
-## ⚙️ Встановлення
+## ⚙️ Installation
 
-1. **Клонувати репозиторій:**
+1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/Volodya1989/goit-ds-hw-02.git
 cd goit-ds-hw-02
 ```
 
-2. **Створити віртуальне середовище (опційно):**
+2. **Create a virtual environment (optional but recommended):**
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # на Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. **Встановити залежності:**
+3. **Install dependencies:**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 🧱 Створення таблиць
+## 🧱 Creating the Tables
 
-Виконайте SQL-скрипт:
+Run the SQL script:
 
 ```bash
 sqlite3 task_manager.db < create_db.sql
 ```
 
-## 🌱 Заповнення даними
+## 🌱 Populating the Database
 
-Виконайте Python-скрипт:
+Run the Python script:
 
 ```bash
 python seed.py
 ```
 
-## 🔍 SQL-запити
+## 🔍 Running SQL Queries
 
-Всі необхідні запити знаходяться у файлі `queries.sql`. Їх можна виконувати в інтерактивному режимі:
+All required queries are in the `queries.sql` file. You can run them in the SQLite interactive shell:
 
 ```bash
 sqlite3 task_manager.db
 sqlite> .read queries.sql
 ```
 
-## ✅ Функціонал, що реалізовано
+## ✅ Implemented Features
 
-- Створення таблиць із відповідними обмеженнями (`UNIQUE`, `FOREIGN KEY`, `ON DELETE CASCADE`).
-- Генерація випадкових користувачів, статусів та завдань.
-- Запити:
-    - Вибірка завдань по користувачу або статусу.
-    - Оновлення статусу.
-    - Пошук користувачів без завдань.
-    - Підрахунок завдань.
-    - Видалення завдань.
-    - Вибірка по email-домену тощо.
+- Table creation with appropriate constraints (`UNIQUE`, `FOREIGN KEY`, `ON DELETE CASCADE`).
+- Generation of random users, statuses, and tasks.
+- Queries including:
+    - Selecting tasks by user or status.
+    - Updating task statuses.
+    - Finding users without any tasks.
+    - Counting tasks.
+    - Deleting tasks.
+    - Filtering by email domain, etc.
 
-## 🧑‍💻 Автор
+## 👤 Author
 
-**Volodymyr [@Volodya1989](https://github.com/Volodya1989)**
+**Volodymyr** [@Volodya1989](https://github.com/Volodya1989)
